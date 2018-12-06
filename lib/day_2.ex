@@ -46,7 +46,8 @@ defmodule Day2 do
 
   defp ids(input) do
     input
-    |> String.split()
+    |> String.split("\n")
+    |> Enum.map(&String.trim/1)
     |> Enum.map(&String.graphemes/1)
   end
 

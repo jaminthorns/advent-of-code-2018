@@ -71,7 +71,8 @@ defmodule Day1 do
 
   defp numbers(input) do
     input
-    |> String.split()
+    |> String.split("\n")
+    |> Enum.map(&String.trim/1)
     |> Enum.map(&String.to_integer/1)
   end
 end
