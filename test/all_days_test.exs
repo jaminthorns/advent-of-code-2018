@@ -3,4 +3,5 @@ defmodule Test do
 
   doctest Day1
   doctest Day2
+  doctest Day3
 end
