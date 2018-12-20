@@ -93,8 +93,9 @@ defmodule Day18 do
 
   defp predict(all_acres, gen_count, curr_gen, prev_gen) do
     diff = curr_gen - prev_gen
-    backtrack = rem(gen_count - curr_gen, diff)
-    target_gen = curr_gen - backtrack
+    leftover = gen_count - curr_gen
+    forward = leftover - div(leftover, diff) * diff
+    target_gen = prev_gen + forward - 1
 
     Enum.find(all_acres, &match?({_, ^target_gen}, &1))
   end
